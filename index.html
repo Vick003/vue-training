@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="reveal_js/css/reveal.css">
+    <link rel="stylesheet" href="reveal_js/css/theme/night.css">
+    <link rel="stylesheet" href="reveal_js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="main.css">
+    <title>UNIS Vue Training</title>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Vue</h1>
+                <h3>The Progressive JavaScript Framework</h3>
+                <img src="assets/logo.png" style="border: none">
+            </section>
+            <section>
+                <h3>What is Vue?</h3>
+                <p>Vue.js is a progressive JS framework for building dynamic user interfaces.</p>
+            </section>
+            <section>
+                <h3>What does Progressive Framework mean?</h3>
+                <ul>
+                    <li>Progressive - flexibility to incrementally adopt more features in relation to project needs and size</li>
+                    <li>Framework - library written in vanilla JS to help you build your app faster, write less code, write cleaner, more organized code 
+                        inspired by an <a href="https://vuejs.org/v2/guide/instance.html#Constructor" target="_blank">MVVM</a> design pattern.</li>
+                </ul>
+            </section>
+            <section>
+                <img style="border: none" src="assets/logo.png" alt="vue logo">
+                <h3><u>FEATURES</u></h3>
+                <ul>
+                    <li>Reactive</li>
+                    <li>Virtual DOM</li>
+                    <li>Directives</li>
+                    <li>Components</li>
+                    <li>MVVM inspired</li>
+                </ul>
+            </section>
+            <section>
+                <h3><u>Installation Options</u></h3>
+                <ul>
+                    <li>CDN</li>
+                    <li>Download locally and add a script tag</li>
+                    <li>NPM install and use with module bundlers like Webpack and Browserify</li>
+                </ul>
+            </section>
+            <section>
+                <img style="border: none" src="assets/logo.png" alt="vue logo">
+                <h3><u>Core Concepts</u></h3>
+                <ol>
+                    <li>Reactive Rendering</li>
+                    <ul class="fragment fade-in">
+                        <li>
+                            Data updates the view, view updates the data, less code to manage to tie them together
+                        </li>
+                    </ul>
+                    <li>Declarative DOM manipulation techniques</li>
+                    <ul class="fragment fade-in">
+                        <li>
+                            Cleaner, easier to write, easier to read, easier to maintain, less code
+                        </li>
+                    </ul>
+                </ol>
+            </section>
+            <section>
+                    <img style="border: none" src="assets/logo.png" alt="vue logo">
+                    <h3><u>Core Concepts</u></h3>
+                    <ol start="3">
+                        <li>Component Oriented Architecture</li>
+                        <ul class="fragment fade-in">
+                            <li>Less repetition, less code, better organization</li>
+                        </ul>
+                        <li>Virtual DOM implementation, for fast efficient DOM updates</li>
+                        <ul class="fragment fade-in">
+                            <li>Performance, better user experience</li>
+                        </ul>
+                    </ol>
+                </section>
+            <section>
+                <img src="assets/declarative_rendering.png" width='600' height='550'>
+            </section>
+            <section>
+                <h3>Imperative vs. Declarative Programming</h3>
+                <ul>
+                    <li class="fragment fade-in">Imperative - tell the cpu how to do something, provide it with steps</li>
+                    <li class="fragment fade-in">Declarative - tell the cpu what you want, or your intended end result, but not provide steps</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Why Vue takes a declarative approach?</h3>
+                <ul>
+                    <li class="fragment fade-in">Cleaner</li>
+                    <li class="fragment fade-in">More Semantic</li>
+                    <li class="fragment fade-in">More Legible</li>
+                    <li class="fragment fade-in">Easier to Maintain</li>
+                </ul>
+            </section>
+            <section>
+                <!-- Nested Vertical Slides -->
+                    <section>
+                        <h2>Dynamic Input Binding</h2>
+                        <a href="https://codepen.io/Vick003/pen/jwEEYV?editors=1011" target="_blank" class='logos'>
+                            <img style="border: none" width="200" height="200" src="assets/jquery.gif" alt="jquery logo">
+                        </a><span class='vs'>VS</span>
+                        <a href="https://codepen.io/Vick003/pen/PjwPyX?editors=1011" target="_blank" class='logos'>
+                            <img style="border: none" src="assets/logo.png" alt="vue logo">
+                        </a>
+                    </section>
+                    <section>
+                        <h2>Looping and building dynamic elements</h2>
+                        <a href="https://codepen.io/Vick003/pen/JJowjr" target="_blank" class='logos'>
+                            <img style="border: none" width="200" height="200" src="assets/js.png" alt="js logo">
+                        </a>
+                        <span class='vs'>VS</span>
+                        <a href="https://codepen.io/Vick003/pen/OgPrLd?editors=1010" target="_blank" class='logos'>
+                            <img style="border: none" src="assets/logo.png" alt="vue logo">
+                        </a>
+                    </section>
+                <!-- End of Nested Vertical Slides -->
+            </section>
+            <section>
+                <h3>The Vue Instance</h3>
+                <img src="assets/vue_instance.png" width="650" height="550">
+            </section>
+            <section>
+                <h3>The Vue Instance</h3>
+                <img src="assets/vue_instance_details.png" width="650" height="550">
+            </section>
+            <section data-markdown>
+                #### Vue Instance Options
+                ```js
+                    var app = new Vue({
+                        el : '#mounting_point_to_dom',
+                        data: {
+                            // houses state
+                        },
+                        methods: {
+                            // just functions
+                        },
+                        computed: {
+                            // derived state, or when a calculation/computation is necessary 
+                        },
+                        watch: {
+                            // custom functions to react to data changes
+                        }
+                    });
+                ```
+                [See All Vue Instance Options](https://vuejs.org/v2/api/#Options-Data)
+            </section>
+            <section>
+                <h3>Directives in Vue</h3>
+                <p>Directives are HTML attributes that are provided by Vue for interaction with the DOM. Some notable directives are:</p>
+                <ul>
+                    <li><a href='https://vuejs.org/v2/api/#v-model' target='_blank'>v-model (used on form inputs and textareas for two-way data-binding)</a></li>
+                    <li><a href='https://vuejs.org/v2/api/#v-bind'  target='_blank'>v-bind (binds a native HTML attribute to data in the vue instance)</a></li>
+                    <li><a href='https://vuejs.org/v2/api/#v-on'    target='_blank'>v-on (event handling)</a></li>
+                    <li><a href='https://vuejs.org/v2/api/#v-if'    target='_blank'>v-if (conditional DOM rendering )</a></li>
+                    <li><a href='https://vuejs.org/v2/api/#v-for'   target='_blank'>v-for (looping, usually dynamically building elements based from items in an array)</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3><a href='https://vuejs.org/v2/api/#v-bind' target='_blank'>v-bind</a></h3>
+                <ul>
+                    <li>Binds the HTML attribute to data in the vue instance</li>
+                    <li>When used to bind the class or style attribute, it supports additional value types such as Array or Objects</li>
+                </ul>
+                <p>
+                    <a href="https://codepen.io/dev_vick/pen/vpboqa?editors=1011" target='_blank'>
+                        v-bind codepen demo
+                    </a>
+                </p>
+            </section>
+            <section>
+                    <h3><a href='https://vuejs.org/v2/api/#v-on' target='_blank'>v-on</a></h3>
+                    <ul>
+                        <li>Attaches an event listener to the element. The event type is denoted by the argument</li>
+                        <li> 
+                            The expression can be a method name, an inline statement, or omitted if there are 
+                            modifiers present.
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="https://codepen.io/dev_vick/pen/NXOxjN?editors=1011" target='_blank'>
+                            v-on codepen demo
+                        </a>
+                    </p>
+            </section>
+            <section>
+                <h3>Exercise 1</h3>
+                <a href="https://bitbucket.org/snippets/vickeap/re7Gda" target='_blank'>Get Code Gist</a>
+            </section>
+            <section>
+                <h3><a href='https://vuejs.org/v2/api/#v-model' target='_blank'>v-model</a></h3>
+                <ul>
+                    <li>Creates two-way binding on form input and textarea elements</li>
+                    <li>It automatically picks the correct way to update the element based on the input type</li>
+                </ul>
+                <p>
+                    <a href='https://codepen.io/dev_vick/pen/bamGNQ?editors=1011' target='_blank'>v-model with modifiers codepen demo</a>
+                </p>
+            </section>
+            <section>
+                <h3><a href='https://vuejs.org/v2/guide/list.html#Mapping-an-Array-to-Elements-with-v-for' target='_blank'>v-for</a></h3>
+                <ul>
+                    <li>Allows you to dynamically render elements based on items in an array or an object.</li>
+                </ul>
+                <p>
+                    <a href='https://codepen.io/dev_vick/pen/bamGNQ?editors=1011' target='_blank'>v-for codepen demo</a>
+                </p>
+            </section>
+            <section>
+                    <h3>Exercise 2</h3>
+                    <a href="https://bitbucket.org/snippets/vickeap/8e7MLX/vue-exercise-2" target='_blank'>Get Code Gist</a>
+            </section>
+            <section>
+                <h3><a href="https://vuejs.org/v2/guide/computed.html#Computed-Properties" target="_blank">Computed Properties</a></h3>
+                <ul>
+                    <li>Calculations on state (i.e., data properties)</li>
+                    <li>Dependent on values of the state, if state changes so does the computed property</li>
+                    <li>Cached, for performance considerations</li>
+                    <li>Also known as derived state</li>
+                </ul>
+                <p>
+                    <a href='' target='_blank'>v-for codepen demo</a>
+                </p>
+            </section>
+        </div>
+    </div>
+    <script src="reveal_js/lib/js/head.min.js"></script>
+	<script src="reveal_js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'reveal_js/plugin/markdown/marked.js' },
+					{ src: 'reveal_js/plugin/markdown/markdown.js' },
+					{ src: 'reveal_js/plugin/notes/notes.js', async: true },
+					{ src: 'reveal_js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+</body>
+</html>

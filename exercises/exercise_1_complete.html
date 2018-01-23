@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Progress Bar Exercise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css">
+    <style>
+        #app {
+            margin-top: 15vh;
+        }
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+         <div class="columns">
+            <div class="column is-6 is-offset-3 card">
+                <h3 class="title is-3">Current Progress: {{progress}}  %</h3>
+                                                    <!-- Bind to Value-->
+                <progress class="progress is-medium is-info" v-bind:value="progress" max="100"></progress>
+                <!-- Implement Click Event Handler Directive on <a> below -->
+                <a class="button is-success is-medium" @click="start">Start</a>
+            </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                progress: 0
+            },
+            methods: {
+                start: function() {
+                    var self = this;
+
+                    var progressInterval = setInterval(function() {
+                        if (self.progress < 100) {
+                            self.progress += 10;
+                        } else {
+                            clearInterval(progressInterval);
+                            self.progress = 0;
+                        }
+                    }, 1000)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
