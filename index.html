@@ -14,9 +14,11 @@
     <div class="reveal">
         <div class="slides">
             <section>
-                <h1>Vue</h1>
+                <h2>Vue</h2>
                 <h3>The Progressive JavaScript Framework</h3>
                 <img src="assets/logo.png" style="border: none">
+                <p>UNIS Dev Team Vue Training Slides</p>
+                <small>By Vick Eap</small>
             </section>
             <section>
                 <h3>What is Vue?</h3>
@@ -210,7 +212,7 @@
                     <li>Allows you to dynamically render elements based on items in an array or an object.</li>
                 </ul>
                 <p>
-                    <a href='https://codepen.io/dev_vick/pen/bamGNQ?editors=1011' target='_blank'>v-for codepen demo</a>
+                    <a href='https://codepen.io/dev_vick/pen/WdPVOP' target='_blank'>v-for codepen demo</a>
                 </p>
             </section>
             <section>
@@ -218,16 +220,254 @@
                     <a href="https://bitbucket.org/snippets/vickeap/8e7MLX/vue-exercise-2" target='_blank'>Get Code Gist</a>
             </section>
             <section>
-                <h3><a href="https://vuejs.org/v2/guide/computed.html#Computed-Properties" target="_blank">Computed Properties</a></h3>
+                <h3><a href="https://vuejs.org/v2/guide/conditional.html#v-if" target="_blank">v-if, v-else, v-else-if</a></h3>
                 <ul>
-                    <li>Calculations on state (i.e., data properties)</li>
-                    <li>Dependent on values of the state, if state changes so does the computed property</li>
-                    <li>Cached, for performance considerations</li>
-                    <li>Also known as derived state</li>
+                    <li>Conditional Rendering of a DOM element based on truthy or falsy value provided to the directive</li>
+                </ul>
+                <p><a href="https://codepen.io/dev_vick/pen/opOQXa?editors=1011" target='_blank'>v-if codepen demo</a></p>
+            </section>
+            <section>
+                <h3><a href="https://vuejs.org/v2/guide/conditional.html#v-if-vs-v-show" target='_blank'>v-if vs. v-show</a></h3>
+                <ul>
+                    <li>
+                        v-if is "Real" conditional rendering because it ensures that event listeners and child components inside the 
+                        conditional block are properly destroyed and re-created during toggles.
+                    </li>
+                   <li>
+                       v-if has higher toggle costs, v-show has higher initial render costs.
+                   </li>
+                   <li>
+                       Use v-show if you need to toggle something very often, and prefer v-if if the condition is 
+                       unlikely to change at runtime.  
+                   </li>
                 </ul>
                 <p>
-                    <a href='' target='_blank'>v-for codepen demo</a>
+                    <a href="https://codepen.io/dev_vick/pen/vpMzoW?editors=1010" target="_blank"> v-if vs. v-show codepen demo</a>
                 </p>
+            </section>
+            <section>
+                    <h3><a href="https://vuejs.org/v2/api/#v-html" target='_blank'>v-text &amp; v-html</a></h3>
+                    <ul>
+                        <li>
+                            v-text just updates the textContent of an element. can be used in place of {{ }} syntax 
+                        </li>
+                        <li>
+                            v-html updates the element's innerHTML
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="https://codepen.io/dev_vick/pen/LevvRE?editors=1010" target="_blank">v-text &amp; v-html codepen demo</a>
+                    </p>
+            </section>
+            <section>
+                    <h3><a href="https://vuejs.org/v2/api/#v-pre" target='_blank'>v-pre, v-cloak, v-once</a></h3>
+                    <ul>
+                        <li>
+                            v-pre is used to skip compilation. Skipping large numbers of nodes with 
+                            no directives on them can also speed up compilation.
+                        </li>
+                        <li>
+                            v-cloak is used to hide un-compiled mustache bindings until the Vue instance is ready.
+                        </li>
+                        <li>
+                            v-once is used to render the element and component once only. This can be used to optimized 
+                            update performance.
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="https://codepen.io/dev_vick/pen/XVQQVv?editors=1011" target="_blank">v-pre, v-cloak, v-once</a>
+                    </p>
+            </section>
+            <section>
+                <section>
+                        <h3>Computed Properties</h3>
+                        <img src="assets/derived_state.png" width="650" height="550">
+                </section>
+                <section>
+                    <h3><a href="https://vuejs.org/v2/guide/computed.html#Computed-Properties" target="_blank">Computed Properties</a></h3>
+                    <ul>
+                        <li>Calculations on state (i.e., data properties)</li>
+                        <li>Dependent on values of the state, if state changes so does the computed property</li>
+                        <li>Cached, for performance considerations</li>
+                        <li>Also known as derived state</li>
+                    </ul>
+                    <p>
+                        <a href='https://codepen.io/dev_vick/pen/KZEzgV?editors=1011' target='_blank'>computed properties codepen demo</a>
+                    </p>
+                    <p>
+                        <a href="http://slides.com/sdrasner/intro-to-vue-2?token=502n2b7V#/15" target='_blank'>Sarah Drasner's Comparison of Computed vs Methods</a>
+                    </p>
+                </section>
+            </section>
+            <section>
+                    <h3><a href="https://vuejs.org/v2/guide/computed.html#Watchers" target='_blank'>Watch Properties</a></h3>
+                    <ul>
+                        <li>
+                            A custom function to 'watch' a data property for changes 
+                        </li>
+                        <li>
+                            Has access to old and new values of the data property
+                        </li>
+                        <li>
+                            Can invoke a method each time the data property changes. 
+                        </li>
+                        <li>
+                            Official docs recommends to use watchers when you want to perform
+                            asynchronous or expensive operations in response to changing data 
+                        </li>
+                    </ul>
+                    <p>
+                        <a href="https://codepen.io/dev_vick/pen/JMqEGv?editors=1011" target="_blank">Watch Properties Codepen Demo</a>
+                    </p>
+            </section>
+            <section>
+                <h3><a href="https://vuejs.org/v2/guide/filters.html#ad">Filters</a></h3>
+                <ul>
+                    <li>Used to apply common text formatting</li>
+                    <li>They are most common in interpolations and v-bind expressions</li>
+                    <li>Denoted by the pipe symbol --> |</li>
+                </ul>
+                <p>
+                    <a href="https://codepen.io/dev_vick/pen/YYbONy?editors=1011" target="_blank">Filters Codepen Demo</a>
+                </p>
+            </section>
+            <section>
+                <h3><a href="https://vuejs.org/v2/api/#Options-Lifecycle-Hooks" target='_blank'>Lifecycle Hooks</a></h3>
+                <ul>
+                    <li>
+                        created - data, computed properties, methods, watchers are set up before mount
+                    </li>
+                    <li>mounted - instance or component has been mounted to the dom, app.$el is available</li>
+                    <li>
+                        updated - Called after a data change causes the virtual DOM to be re-rendered and patched.
+                    </li>
+                    <li>
+                        destroyed - component or instance should no longer exist
+                    </li>
+                </ul>
+                <p>
+                    <a href="https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram" target="_blank">See diagram</a>
+                </p>
+                <p>
+                    <a href="https://codepen.io/dev_vick/pen/ppmzGy?editors=1011" target="_blank">LifeCycle Hooks Codepen Demo</a>
+                </p>
+            </section>
+            <section>
+                    <h3>Exercise 3</h3>
+                    <a href="https://bitbucket.org/snippets/vickeap/GekKk8" target='_blank'>Get Code Gist</a>
+            </section>
+            <section>
+                <section>
+                    <h3><a href="https://vuejs.org/v2/guide/components.html#What-are-Components" target='_blank'>Components</a></h3>
+                    <blockquote>
+                        Components are one of the most powerful features of Vue. They help you extend basic HTML elements to encapsulate reusable code. 
+                        At a high level, components are custom elements that Vue’s compiler attaches behavior to.
+                    </blockquote>
+                    <p>
+                        <a href="http://slides.com/sdrasner/intro-to-vue-3?token=LwIVIblm#/4" target="_blank">Sarah Drasner's Components definition</a>
+                    </p>
+                </section>
+                <section>
+                    <h3>Why are components useful?</h3>
+                    <ul>
+                        <li>
+                            Reusability 
+                        </li>
+                        <li>
+                            Markup is more readable. 
+                        </li>
+                        <li>
+                            Can encapsulate it's own functionality and state
+                        </li>
+                        <li>
+                            Code Organization
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Global Component Defintion </h3> 
+                    <p data-height="379" data-theme-id="0" data-slug-hash="ZvdddX" data-default-tab="js,result" data-user="dev_vick" data-embed-version="2" data-pen-title="Creating a Global Component" class="codepen">See the Pen <a href="https://codepen.io/dev_vick/pen/ZvdddX/">Creating a Global Component</a> by Vick (<a href="https://codepen.io/dev_vick">@dev_vick</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section>
+                    <h3>Local Component Definition</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="YYomPb" data-default-tab="js,result" data-user="dev_vick" data-embed-version="2" data-pen-title="Local Components" class="codepen">See the Pen <a href="https://codepen.io/dev_vick/pen/YYomPb/">Local Components</a> by Vick (<a href="https://codepen.io/dev_vick">@dev_vick</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section>
+                    <h3>Note: Data in a component must be a function!</h3>
+                    <section data-markdown>
+                        ```
+                        Vue.component('my-component', {
+                            template: '#my-component',
+                            data: function() {
+                                return {
+                                    // keeps data tied to scope of individual component!
+                                }
+                            }
+                        });
+                        ```
+                    </section>
+                    <p>
+                        <a href="https://vuejs.org/v2/guide/components.html#data-Must-Be-a-Function" target="_blank">Again, data must be a function!</a>
+                    </p>
+                </section>
+            </section>
+            <section>
+                <section>
+                        <h3><a href="https://vuejs.org/v2/guide/components.html#Passing-Data-with-Props">Component Props</a></h3>
+                        <ul>
+                            <li>Custom Attributes</li>
+                            <li>Enable communication</li>
+                            <li>Props passed down from parent</li>
+                            <li>Events sent up from child</li>
+                        </ul> 
+                        <p><a href="http://slides.com/sdrasner/intro-to-vue-3?token=LwIVIblm#/7" target="_blank">Sarah Drasner's Props Explanation</a></p>
+                </section>
+                <section>
+                        <h3>Props Down, Events Up</h3>
+                        <img src="assets/props-events.png" width="650" height="550">
+                </section>
+                <section>
+                        <h3>How Props are passed down?</h3>
+                        <p data-height="265" data-theme-id="0" data-slug-hash="baXwPo" data-default-tab="js,result" data-user="dev_vick" data-embed-version="2" data-pen-title="Props" class="codepen">See the Pen <a href="https://codepen.io/dev_vick/pen/baXwPo/">Props</a> by Vick (<a href="https://codepen.io/dev_vick">@dev_vick</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                        <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+                <section>
+                    <h3>Emitting Events</h3>
+                    <p data-height="265" data-theme-id="0" data-slug-hash="mmNamV" data-default-tab="js,result" data-user="Vick003" data-embed-version="2" data-pen-title="Emitting Custom Events with Vue " class="codepen">See the Pen <a href="https://codepen.io/Vick003/pen/mmNamV/">Emitting Custom Events with Vue </a> by Vick (<a href="https://codepen.io/Vick003">@Vick003</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                    <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                </section>
+            </section>
+            <section>
+                <h3>Slots</h3>
+                <p>A placeholder in a component that will accept static content or even another component</p>
+                <p data-height="265" data-theme-id="0" data-slug-hash="qpeomP" data-default-tab="html,result" data-user="dev_vick" data-embed-version="2" data-pen-title="Parent-Child Using Slots" class="codepen">See the Pen <a href="https://codepen.io/dev_vick/pen/qpeomP/">Parent-Child Using Slots</a> by Vick (<a href="https://codepen.io/dev_vick">@dev_vick</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+            </section>
+            <section>
+                <h3>Mixins</h3>
+                <p>Mixins are a flexible way to distribute reusable functionalities for Vue components. A mixin object can contain any component options. 
+                    When a component uses a mixin, all options in the mixin will be “mixed” into the component’s own options.</p>
+                <p data-height="265" data-theme-id="0" data-slug-hash="WdVJgO" data-default-tab="js,result" data-user="dev_vick" data-embed-version="2" data-pen-title="Basic Mixin Example" class="codepen">See the Pen <a href="https://codepen.io/dev_vick/pen/WdVJgO/">Basic Mixin Example</a> by Vick (<a href="https://codepen.io/dev_vick">@dev_vick</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+            </section>
+            <section>
+                <h3>Exercise 4</h3>
+                <a href="https://bitbucket.org/snippets/vickeap/ne6xAR" target='_blank'>Get Code Gist</a>
+            </section>
+            <section>
+                <h3>Additinal Topics to Explore</h3>
+                <ul>
+                    <li><a href="https://vuejs.org/v2/guide/installation.html#CLI" target="_blank">Vue CLI</a></li>
+                    <li><a href="https://vuejs.org/v2/guide/single-file-components.html" target="_blank">Single File Components</a></li>
+                    <li><a href="https://vuex.vuejs.org/en/" target="_blank">Vuex</a></li>
+                    <li><a href="https://router.vuejs.org/en/" target="_blank">Vue Router</a></li>
+                </ul>
+            </section>
+            <section>
+                <h3>The End</h3>
+                <h4>Thank You!</h4>
             </section>
         </div>
     </div>
